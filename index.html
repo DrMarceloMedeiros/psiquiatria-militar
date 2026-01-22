@@ -43,34 +43,62 @@
             pointer-events: none;
         }
         
-        /* Brasões flutuantes nas laterais */
-        .military-badge-left, .military-badge-right {
+        /* Brasões flutuantes nas laterais - CORRIGIDO */
+        .military-badge-side {
             position: fixed;
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             z-index: 900;
-            opacity: 0.15;
-            transition: opacity 0.3s;
+            opacity: 0.18;
+            transition: opacity 0.3s, transform 0.3s;
             pointer-events: none;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
         }
         
-        .military-badge-left:hover, .military-badge-right:hover {
+        .military-badge-side:hover {
             opacity: 0.25;
+            transform: scale(1.05);
         }
         
-        .military-badge-left {
-            left: 20px;
+        /* Posições específicas para cada brasão */
+        .badge-exercito {
+            background-image: url('https://i.ibb.co/5Wz5q2c/exercito.png');
+            left: 15px;
         }
         
-        .military-badge-right {
-            right: 20px;
+        .badge-aeronautica {
+            background-image: url('https://i.ibb.co/2cKSpHn/aeronautica.png');
+            right: 15px;
         }
         
-        /* Posicionamento dos brasões ao rolar */
-        .badge-1 { top: 20%; }
-        .badge-2 { top: 40%; }
-        .badge-3 { top: 60%; }
-        .badge-4 { top: 80%; }
+        .badge-marinha {
+            background-image: url('https://i.ibb.co/0nKmXS9/marinha.png');
+            left: 15px;
+        }
+        
+        .badge-pm {
+            background-image: url('https://i.ibb.co/0q8LyHz/pm.png');
+            right: 15px;
+        }
+        
+        .badge-bombeiros {
+            background-image: url('https://i.ibb.co/7tnHPhN/bombeiros.png');
+            left: 15px;
+        }
+        
+        .badge-prf {
+            background-image: url('https://i.ibb.co/5KT6t7v/prf.png');
+            right: 15px;
+        }
+        
+        /* Posicionamento vertical dos brasões */
+        .position-20 { top: 20%; }
+        .position-35 { top: 35%; }
+        .position-50 { top: 50%; }
+        .position-65 { top: 65%; }
+        .position-80 { top: 80%; }
         
         /* WhatsApp Flutuante GRANDE */
         .whatsapp-float {
@@ -507,7 +535,7 @@
                 height: 400px;
             }
             /* Esconder brasões em telas menores */
-            .military-badge-left, .military-badge-right {
+            .military-badge-side {
                 display: none;
             }
         }
@@ -574,31 +602,13 @@
     </style>
 </head>
 <body>
-    <!-- Brasões das Forças Armadas (Laterais) -->
-    <div class="military-badge-left badge-1">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Bras%C3%A3o_do_Ex%C3%A9rcito_Brasileiro.svg/240px-Bras%C3%A3o_do_Ex%C3%A9rcito_Brasileiro.svg.png" 
-             alt="Brasão Exército Brasileiro" style="width: 100%; height: 100%; object-fit: contain;">
-    </div>
-    <div class="military-badge-right badge-1">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/For%C3%A7a_A%C3%A9rea_Brasileira_-_Bras%C3%A3o_de_Armas.svg/240px-For%C3%A7a_A%C3%A9rea_Brasileira_-_Bras%C3%A3o_de_Armas.svg.png" 
-             alt="Brasão Força Aérea Brasileira" style="width: 100%; height: 100%; object-fit: contain;">
-    </div>
-    <div class="military-badge-left badge-2">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Bras%C3%A3o_da_Marinha_do_Brasil.svg/240px-Bras%C3%A3o_da_Marinha_do_Brasil.svg.png" 
-             alt="Brasão Marinha do Brasil" style="width: 100%; height: 100%; object-fit: contain;">
-    </div>
-    <div class="military-badge-right badge-2">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Seal_of_the_Brazilian_Military_Police.svg/240px-Seal_of_the_Brazilian_Military_Police.svg.png" 
-             alt="Brasão Polícia Militar" style="width: 100%; height: 100%; object-fit: contain;">
-    </div>
-    <div class="military-badge-left badge-3">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Bras%C3%A3o_Corporativo_do_Corpo_de_Bombeiros_Militar_do_Distrito_Federal.png/240px-Bras%C3%A3o_Corporativo_do_Corpo_de_Bombeiros_Militar_do_Distrito_Federal.png" 
-             alt="Brasão Corpo de Bombeiros" style="width: 100%; height: 100%; object-fit: contain;">
-    </div>
-    <div class="military-badge-right badge-3">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Bras%C3%A3o_da_Pol%C3%ADcia_Rodovi%C3%A1ria_Federal.svg/240px-Bras%C3%A3o_da_Pol%C3%ADcia_Rodovi%C3%A1ria_Federal.svg.png" 
-             alt="Brasão Polícia Rodoviária Federal" style="width: 100%; height: 100%; object-fit: contain;">
-    </div>
+    <!-- BRASÕES DAS FORÇAS ARMADAS (CORRIGIDOS) -->
+    <div class="military-badge-side badge-exercito position-20"></div>
+    <div class="military-badge-side badge-aeronautica position-20"></div>
+    <div class="military-badge-side badge-marinha position-35"></div>
+    <div class="military-badge-side badge-pm position-35"></div>
+    <div class="military-badge-side badge-bombeiros position-50"></div>
+    <div class="military-badge-side badge-prf position-50"></div>
 
     <!-- WhatsApp Flutuante GRANDE -->
     <a href="https://wa.me/554491339060?text=Olá,%20Dr.%20Marcelo,%20sou%20(militar/ex-militar)%20e%20gostaria%20de%20agendar%20uma%20consulta%20especializada" 
@@ -1089,7 +1099,7 @@
         
         // Animação suave para os brasões
         document.addEventListener('DOMContentLoaded', function() {
-            const badges = document.querySelectorAll('.military-badge-left, .military-badge-right');
+            const badges = document.querySelectorAll('.military-badge-side');
             
             // Efeito de parallax suave nos brasões
             window.addEventListener('scroll', function() {
