@@ -43,64 +43,24 @@
             pointer-events: none;
         }
         
-        /* Brasões flutuantes nas laterais - AGORA FUNCIONANDO */
-        .military-badge-side {
+        /* Container dos SVGs nas laterais */
+        .badge-container {
             position: fixed;
             width: 70px;
             height: 70px;
             z-index: 900;
-            opacity: 0.2;
+            opacity: 0.3;
             transition: opacity 0.3s, transform 0.3s;
             pointer-events: none;
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            filter: grayscale(20%) sepia(10%);
         }
         
-        .military-badge-side:hover {
-            opacity: 0.3;
-            transform: scale(1.05);
-        }
+        .badge-left { left: 15px; }
+        .badge-right { right: 15px; }
         
-        /* BRASÕES COM IMAGENS DIRETAS QUE FUNCIONAM */
-        /* Exército */
-        .badge-exercito {
-            background-image: url('https://i.imgur.com/v2NkQzE.png');
-            left: 15px;
-        }
-        
-        /* Aeronáutica */
-        .badge-aeronautica {
-            background-image: url('https://i.imgur.com/L4rW9Jv.png');
-            right: 15px;
-        }
-        
-        /* Marinha */
-        .badge-marinha {
-            background-image: url('https://i.imgur.com/8q7Z3Yt.png');
-            left: 15px;
-        }
-        
-        /* Polícia Militar */
-        .badge-pm {
-            background-image: url('https://i.imgur.com/9t6KjX7.png');
-            right: 15px;
-        }
-        
-        /* Bombeiros */
-        .badge-bombeiros {
-            background-image: url('https://i.imgur.com/3Q8mV6F.png');
-            left: 15px;
-        }
-        
-        /* Polícia Rodoviária Federal */
-        .badge-prf {
-            background-image: url('https://i.imgur.com/5R9wL2c.png');
-            right: 15px;
-        }
-        
-        /* Posicionamento vertical dos brasões */
+        /* Posicionamento vertical */
         .position-20 { top: 20%; }
         .position-35 { top: 35%; }
         .position-50 { top: 50%; }
@@ -542,7 +502,7 @@
                 height: 400px;
             }
             /* Esconder brasões em telas menores */
-            .military-badge-side {
+            .badge-container {
                 display: none;
             }
         }
@@ -609,13 +569,13 @@
     </style>
 </head>
 <body>
-    <!-- BRASÕES DAS FORÇAS ARMADAS - AGORA 100% FUNCIONANDO! -->
-    <div class="military-badge-side badge-exercito position-20"></div>
-    <div class="military-badge-side badge-aeronautica position-20"></div>
-    <div class="military-badge-side badge-marinha position-35"></div>
-    <div class="military-badge-side badge-pm position-35"></div>
-    <div class="military-badge-side badge-bombeiros position-50"></div>
-    <div class="military-badge-side badge-prf position-50"></div>
+    <!-- BRASÕES DAS FORÇAS ARMADAS - AGORA COM SVGs EMBUTIDOS! -->
+    <div class="badge-container badge-left position-20" id="exercito-badge"></div>
+    <div class="badge-container badge-right position-20" id="aeronautica-badge"></div>
+    <div class="badge-container badge-left position-35" id="marinha-badge"></div>
+    <div class="badge-container badge-right position-35" id="pm-badge"></div>
+    <div class="badge-container badge-left position-50" id="bombeiros-badge"></div>
+    <div class="badge-container badge-right position-50" id="prf-badge"></div>
 
     <!-- WhatsApp Flutuante GRANDE -->
     <a href="https://wa.me/554491339060?text=Olá,%20Dr.%20Marcelo,%20sou%20(militar/ex-militar)%20e%20gostaria%20de%20agendar%20uma%20consulta%20especializada" 
@@ -1093,9 +1053,73 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Animação suave para os brasões
+        // SVGs EMBUTIDOS DIRETAMENTE - SEM HOSPEDAGEM EXTERNA
         document.addEventListener('DOMContentLoaded', function() {
-            const badges = document.querySelectorAll('.military-badge-side');
+            // Função para criar SVG com base64 embutido
+            function createSVGBadge(base64, elementId) {
+                const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+                    <image href="${base64}" width="70" height="70" />
+                </svg>`;
+                
+                const element = document.getElementById(elementId);
+                if (element) {
+                    element.style.backgroundImage = `url("data:image/svg+xml;base64,${btoa(svg)}")`;
+                }
+            }
+            
+            // SVGs simples em base64 - Brasões estilizados
+            const exercitoSVG = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+                    <circle cx="35" cy="35" r="30" fill="#556B2F" opacity="0.7"/>
+                    <path d="M20 25 L50 25 L60 45 L40 65 L30 65 L10 45 Z" fill="white" opacity="0.9"/>
+                    <text x="35" y="40" text-anchor="middle" fill="#3D5229" font-weight="bold" font-size="10">EXÉRCITO</text>
+                </svg>`;
+            
+            const aeronauticaSVG = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+                    <circle cx="35" cy="35" r="30" fill="#2C3E50" opacity="0.7"/>
+                    <path d="M20 30 L50 30 L45 50 L35 60 L25 50 Z" fill="white" opacity="0.9"/>
+                    <text x="35" y="40" text-anchor="middle" fill="#2C3E50" font-weight="bold" font-size="9">AERONÁUTICA</text>
+                </svg>`;
+            
+            const marinhaSVG = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+                    <circle cx="35" cy="35" r="30" fill="#1a237e" opacity="0.7"/>
+                    <path d="M25 25 L45 25 L55 45 L35 60 L15 45 Z" fill="white" opacity="0.9"/>
+                    <text x="35" y="40" text-anchor="middle" fill="#1a237e" font-weight="bold" font-size="10">MARINHA</text>
+                </svg>`;
+            
+            const pmSVG = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+                    <circle cx="35" cy="35" r="30" fill="#8B0000" opacity="0.7"/>
+                    <rect x="20" y="25" width="30" height="30" rx="5" fill="white" opacity="0.9"/>
+                    <text x="35" y="40" text-anchor="middle" fill="#8B0000" font-weight="bold" font-size="9">P. MILITAR</text>
+                </svg>`;
+            
+            const bombeirosSVG = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+                    <circle cx="35" cy="35" r="30" fill="#FF6B00" opacity="0.7"/>
+                    <polygon points="35,20 50,50 20,50" fill="white" opacity="0.9"/>
+                    <text x="35" y="40" text-anchor="middle" fill="#FF6B00" font-weight="bold" font-size="9">BOMBEIROS</text>
+                </svg>`;
+            
+            const prfSVG = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+                    <circle cx="35" cy="35" r="30" fill="#006400" opacity="0.7"/>
+                    <rect x="22" y="25" width="26" height="20" fill="white" opacity="0.9"/>
+                    <text x="35" y="40" text-anchor="middle" fill="#006400" font-weight="bold" font-size="8">P.R.FEDERAL</text>
+                </svg>`;
+            
+            // Aplicar os SVGs
+            document.getElementById('exercito-badge').style.backgroundImage = `url("data:image/svg+xml;base64,${btoa(exercitoSVG)}")`;
+            document.getElementById('aeronautica-badge').style.backgroundImage = `url("data:image/svg+xml;base64,${btoa(aeronauticaSVG)}")`;
+            document.getElementById('marinha-badge').style.backgroundImage = `url("data:image/svg+xml;base64,${btoa(marinhaSVG)}")`;
+            document.getElementById('pm-badge').style.backgroundImage = `url("data:image/svg+xml;base64,${btoa(pmSVG)}")`;
+            document.getElementById('bombeiros-badge').style.backgroundImage = `url("data:image/svg+xml;base64,${btoa(bombeirosSVG)}")`;
+            document.getElementById('prf-badge').style.backgroundImage = `url("data:image/svg+xml;base64,${btoa(prfSVG)}")`;
+            
+            // Animação suave para os brasões
+            const badges = document.querySelectorAll('.badge-container');
             
             // Efeito de parallax suave nos brasões
             window.addEventListener('scroll', function() {
@@ -1106,20 +1130,6 @@
                     const yPos = -(scrolled * speed);
                     badge.style.transform = `translateY(${yPos}px)`;
                 });
-            });
-            
-            // Verificar se as imagens carregaram
-            badges.forEach(badge => {
-                const img = new Image();
-                img.src = getComputedStyle(badge).backgroundImage.slice(4, -1).replace(/"/g, "");
-                
-                img.onload = function() {
-                    console.log('Brasão carregado:', this.src);
-                };
-                
-                img.onerror = function() {
-                    console.log('Erro ao carregar brasão:', this.src);
-                };
             });
         });
     </script>
