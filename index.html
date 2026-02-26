@@ -14,6 +14,7 @@
             --dark-military: #3D5229;    /* Verde militar escuro */
             --light-military: #8F9779;   /* Verde militar claro */
             --camouflage-light: #C4C5BA; /* Camuflagem suave */
+            --star-color: #ffc107;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -26,7 +27,7 @@
             background-color: #f8f9fa;
         }
         
-        /* Logo de fundo transparente - Agora com símbolo militar */
+        /* Logo de fundo transparente */
         body::before {
             content: '';
             position: fixed;
@@ -60,14 +61,13 @@
         .badge-left { left: 15px; }
         .badge-right { right: 15px; }
         
-        /* Posicionamento vertical */
         .position-20 { top: 20%; }
         .position-35 { top: 35%; }
         .position-50 { top: 50%; }
         .position-65 { top: 65%; }
         .position-80 { top: 80%; }
         
-        /* WhatsApp Flutuante GRANDE */
+        /* WhatsApp Flutuante */
         .whatsapp-float {
             position: fixed;
             width: 90px;
@@ -93,7 +93,7 @@
             box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
         }
         
-        /* Cabeçalho FIXO - Agora com verde militar */
+        /* Cabeçalho */
         header {
             background: linear-gradient(135deg, rgba(85, 107, 47, 0.95), rgba(61, 82, 41, 0.98));
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
@@ -104,325 +104,32 @@
             border-bottom: 3px solid #8F9779;
         }
         
-        /* Hero Section - Verde militar claro */
-        .hero {
-            background: linear-gradient(135deg, #F0F4E8 0%, #E8EDDF 100%);
-            padding: 100px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            border-bottom: 5px solid var(--military-green);
-        }
-        
-        /* Título com gradiente militar */
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--dark-military), #4A5D23);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        
-        /* Subtítulo - Copy militar */
-        .hero-subtitle {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #2C3E50;
-            margin-bottom: 3rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.4;
-        }
-        
-        /* Botão verde WhatsApp (mantido) */
-        .whatsapp-button {
-            background: linear-gradient(135deg, var(--whatsapp-green), #128C7E);
-            color: white;
-            padding: 18px 50px;
-            border-radius: 50px;
+        .header-title {
+            font-size: 1.6rem !important;
             font-weight: 800;
-            font-size: 1.4rem;
-            border: none;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-            letter-spacing: 0.5px;
-            cursor: pointer;
-        }
-        .whatsapp-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.6);
             color: white;
+            margin-bottom: 2px;
         }
         
-        /* Botão para o App - Agora verde militar */
-        .app-button {
-            background: linear-gradient(135deg, var(--military-green), var(--dark-military));
-            color: white;
-            padding: 14px 35px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            border: none;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 5px 15px rgba(85, 107, 47, 0.3);
-            margin-top: 15px;
-        }
-        .app-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(85, 107, 47, 0.5);
-            color: white;
+        .header-sub {
+            font-size: 1.1rem !important;
+            color: #E8EDDF;
+            margin-bottom: 2px;
         }
         
-        /* Container da foto e bio */
-        .photo-bio-container {
-            position: relative;
-            width: 100%;
-            min-height: 500px;
-        }
-        
-        /* Foto placeholder - Borda militar */
-        .photo-placeholder {
-            width: 100%;
-            max-width: 500px;
-            height: 500px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.3s;
-            z-index: 5;
-            margin: 0 auto;
-            background: #f8f9fa;
-            border: 4px solid var(--military-green);
-        }
-        .photo-placeholder:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(85, 107, 47, 0.15);
-        }
-        
-        .doctor-photo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 16px;
-            transition: transform 0.3s ease;
-        }
-        .doctor-photo:hover {
-            transform: scale(1.02);
-        }
-        
-        /* Popup da Biografia - Borda militar */
-        .bio-popup {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 520px;
-            width: 500px;
-            height: 500px;
-            background: white;
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            z-index: 50;
-            border: 3px solid var(--military-green);
-            overflow-y: auto;
-        }
-        .photo-placeholder:hover + .bio-popup,
-        .bio-popup:hover {
-            display: block;
-            animation: slideInRight 0.4s ease-out;
-        }
-        
-        .bio-popup h4 {
-            color: var(--dark-military);
-            font-weight: 800;
-            margin-bottom: 15px;
-            border-bottom: 3px solid #F0F4E8;
-            padding-bottom: 10px;
-        }
-        
-        .bio-popup p {
-            color: #4b5563;
-            margin-bottom: 12px;
-            line-height: 1.5;
-            font-size: 0.95rem;
-        }
-        
-        .bio-badge {
-            background: linear-gradient(135deg, var(--military-green), var(--dark-military));
-            color: white;
-            padding: 6px 12px;
-            border-radius: 15px;
-            font-size: 0.85rem;
+        .header-einstein {
+            font-size: 1rem !important;
+            color: #E8EDDF;
             font-weight: 600;
+            background: rgba(255,255,255,0.1);
+            padding: 4px 12px;
+            border-radius: 30px;
             display: inline-block;
-            margin-right: 8px;
-            margin-bottom: 8px;
+            margin-top: 5px;
         }
         
-        /* Cards de serviços - Borda militar */
-        .service-card {
-            border: 2px solid #e5e7eb;
-            border-radius: 20px;
-            padding: 35px 25px;
-            text-align: center;
-            transition: all 0.4s;
-            height: 100%;
-            background: white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            position: relative;
-            cursor: pointer;
-            margin-bottom: 30px;
-        }
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(85, 107, 47, 0.15);
-            border-color: var(--military-green);
-            background: linear-gradient(135deg, #F0F4E8, #ffffff);
-        }
-        
-        /* Popup de informações científicas - Borda militar */
-        .service-popup {
-            display: none;
-            position: absolute;
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            z-index: 2000;
-            text-align: left;
-            border: 2px solid var(--military-green);
-            width: 350px;
-            bottom: calc(100% + 20px);
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .service-card:hover .service-popup {
-            display: block;
-            animation: fadeInUp 0.3s ease-out;
-        }
-        
-        .service-popup h5 {
-            color: var(--dark-military);
-            font-weight: 700;
-            margin-bottom: 12px;
-            border-bottom: 2px solid #F0F4E8;
-            padding-bottom: 8px;
-            font-size: 1.1rem;
-        }
-        
-        .service-popup ul {
-            padding-left: 20px;
-            margin-bottom: 15px;
-        }
-        
-        .service-popup li {
-            margin-bottom: 8px;
-            color: #4b5563;
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-        
-        .treatment-info {
-            background: #F0F4E8;
-            padding: 10px;
-            border-radius: 8px;
-            margin-top: 10px;
-            font-size: 0.85rem;
-            color: var(--dark-military);
-            border-left: 4px solid var(--military-green);
-        }
-        
-        .price-tag {
-            font-size: 3.2rem;
-            font-weight: 900;
-            color: var(--dark-military);
-            margin: 20px 0;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .price-note {
-            font-size: 1rem;
-            color: #6b7280;
-            margin-top: -10px;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-        
-        /* Botão agendar no header - Verde militar */
-        .header-agendar-btn {
-            background: linear-gradient(135deg, var(--military-green), var(--dark-military));
-            color: white;
-            padding: 12px 35px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            border: none;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 4px 15px rgba(85, 107, 47, 0.3);
-            cursor: pointer;
-        }
-        .header-agendar-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(85, 107, 47, 0.5);
-            color: white;
-        }
-        
-        /* Instruções para instalar o app - Fundo verde militar claro */
-        .install-instructions {
-            background: #F0F4E8;
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 25px;
-            border-left: 4px solid var(--military-green);
-        }
-        
-        .install-steps {
-            margin-top: 15px;
-        }
-        
-        .step-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 12px;
-            padding: 10px;
-            background: white;
-            border-radius: 10px;
-            border: 1px solid #e5e7eb;
-        }
-        
-        .step-number {
-            background: var(--military-green);
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-        
-        /* Badge militar especial */
         .military-badge {
-            background: linear-gradient(135deg, #8B0000, #B22222); /* Vermelho militar */
+            background: linear-gradient(135deg, #8B0000, #B22222);
             color: white;
             padding: 8px 16px;
             border-radius: 20px;
@@ -433,143 +140,608 @@
             border: 2px solid gold;
         }
         
-        /* Animações */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translate(-50%, 10px); }
-            to { opacity: 1; transform: translate(-50%, 0); }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #F0F4E8 0%, #E8EDDF 100%);
+            padding: 70px 0 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid var(--military-green);
         }
         
-        @keyframes slideInRight {
-            from { opacity: 0; transform: translateX(20px); }
-            to { opacity: 1; transform: translateX(0); }
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.2rem;
+            background: linear-gradient(135deg, var(--dark-military), #4A5D23);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         
-        /* Badge de credencial - Verde militar */
-        .credential-badge {
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2C3E50;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Badge de urgência (adaptado para militar) */
+        .urgent-badge {
+            background: linear-gradient(135deg, #8B0000, #B22222);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            display: inline-block;
+            margin: 15px 0 25px;
+            box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
+            border: 3px solid white;
+            white-space: nowrap;
+        }
+        
+        /* Container da foto */
+        .photo-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 25px 35px rgba(0,0,0,0.15);
+            border: 6px solid white;
+            transition: transform 0.3s;
+        }
+        .photo-container:hover {
+            transform: scale(1.02);
+        }
+        
+        .doctor-photo {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Botões */
+        .btn-dual {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+            justify-content: flex-start;
+        }
+        
+        .btn-agendar {
             background: linear-gradient(135deg, var(--military-green), var(--dark-military));
             color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-top: 5px;
-        }
-        
-        /* Especialização militar */
-        .military-specialization {
-            background: linear-gradient(135deg, #2C3E50, #4A5D23);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 25px;
+            padding: 14px 28px;
+            border-radius: 50px;
             font-weight: 700;
+            font-size: 1.3rem;
+            border: none;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 5px 15px rgba(85, 107, 47, 0.3);
+            width: auto;
+            white-space: nowrap;
+        }
+        
+        .btn-whatsapp {
+            background: linear-gradient(135deg, var(--whatsapp-green), #128C7E);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            border: none;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            width: auto;
+            white-space: nowrap;
+        }
+        
+        .btn-agendar:hover, .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            color: white;
+        }
+        
+        /* Mini badges de confiança */
+        .trust-badge {
+            font-size: 1.1rem;
+            background: white;
+            padding: 8px 16px;
+            border-radius: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid #e9eef2;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .trust-badge i {
+            font-size: 1.2rem;
+            color: var(--military-green);
+        }
+        
+        /* Cards de indicação */
+        .indication-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .indication-item {
+            background: white;
+            padding: 25px 15px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border: 1px solid #e9eef2;
+            transition: all 0.3s;
+        }
+        .indication-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(85, 107, 47, 0.15);
+            border-color: var(--military-green);
+        }
+        .indication-item i {
+            font-size: 2.5rem;
+            color: var(--military-green);
+            margin-bottom: 15px;
+        }
+        .indication-item h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0;
+            color: var(--dark-military);
+        }
+        
+        /* Cards de autoridade (militares) */
+        .authority-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        .authority-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border: 1px solid #e9eef2;
+            transition: all 0.3s;
+        }
+        .authority-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(85, 107, 47, 0.1);
+        }
+        .authority-card i {
+            font-size: 3rem;
+            color: var(--military-green);
+            margin-bottom: 20px;
+        }
+        .authority-card h5 {
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark-military);
+        }
+        .authority-card p {
+            color: #4b5563;
+            font-size: 1rem;
+            margin-bottom: 0;
+            line-height: 1.4;
+        }
+        
+        /* Cards de valores (Compromisso, Profissionalismo, Experiência) */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0 50px;
+        }
+        .value-card {
+            background: white;
+            padding: 30px 25px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border: 2px solid transparent;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(85, 107, 47, 0.2);
+            border-color: var(--military-green);
+            background: linear-gradient(135deg, #ffffff, #F0F4E8);
+        }
+        .value-card i {
+            font-size: 3rem;
+            color: var(--military-green);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        .value-card:hover i {
+            transform: scale(1.1);
+        }
+        .value-card h4 {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--dark-military);
+            margin-bottom: 15px;
+        }
+        .value-card p {
+            color: #4b5563;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+        
+        /* Cards de como funciona */
+        .how-it-works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        .how-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid #e9eef2;
+            transition: all 0.3s;
+        }
+        .how-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px rgba(85, 107, 47, 0.15);
+        }
+        .how-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--military-green), var(--dark-military));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2.5rem;
+            box-shadow: 0 10px 15px rgba(85, 107, 47, 0.2);
+        }
+        .how-card h4 {
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--dark-military);
+            margin-bottom: 15px;
+        }
+        .how-card p {
+            color: #4b5563;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        /* ===== SEÇÃO DE DEPOIMENTOS COM FOTOS ===== */
+        .testimonials-section {
+            background: linear-gradient(135deg, #F0F4E8, #ffffff);
+            padding: 60px 0;
+        }
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .testimonials-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-military);
+            margin-bottom: 10px;
+        }
+        .testimonials-header p {
+            font-size: 1.2rem;
+            color: #2C3E50;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Grid de 4 cards lado a lado */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 30px 0 40px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid #e9eef2;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            border-bottom: 4px solid var(--military-green);
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(85, 107, 47, 0.15);
+        }
+        
+        /* Fotos dos pacientes - redondas */
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            overflow: hidden;
+            border: 3px solid var(--military-green);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-rating {
+            color: var(--star-color);
+            font-size: 1rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .testimonial-text {
+            font-size: 0.95rem;
+            color: #2C3E50;
+            margin-bottom: 15px;
+            font-style: italic;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--dark-military);
+            margin-bottom: 2px;
+            text-align: center;
+        }
+        
+        .testimonial-date {
+            font-size: 0.8rem;
+            color: #6b7280;
+            text-align: center;
+        }
+        
+        /* Selo Google */
+        .google-badge {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: white;
+            padding: 15px 30px;
+            border-radius: 60px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            width: fit-content;
+            margin: 20px auto 0;
+            border: 1px solid #e9eef2;
+        }
+        .google-badge i {
+            color: #4285F4;
+            font-size: 2.2rem;
+        }
+        .google-badge .rating {
+            font-weight: 700;
+            color: var(--dark-military);
+            font-size: 1.2rem;
+        }
+        .google-badge .stars {
+            color: var(--star-color);
+            font-size: 1rem;
+        }
+        .google-badge .total {
+            color: #6b7280;
             font-size: 0.9rem;
-            display: inline-block;
-            margin-top: 5px;
-            border: 2px solid #8F9779;
         }
         
-        /* Responsivo */
-        @media (min-width: 1200px) {
-            .photo-bio-container {
-                min-height: 500px;
-            }
-            .bio-popup {
-                display: none;
-                position: absolute;
-                left: 520px;
-                width: 500px;
-            }
+        /* Cards de serviços (militares) */
+        .service-card {
+            background: white;
+            border-radius: 25px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border: 1px solid #e9eef2;
+            transition: all 0.3s;
+            height: 100%;
+            border-bottom: 4px solid var(--military-green);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(85, 107, 47, 0.15);
+        }
+        .service-card i {
+            font-size: 2.8rem;
+            color: var(--military-green);
+            margin-bottom: 20px;
+        }
+        .service-card h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark-military);
+        }
+        .service-card p {
+            font-size: 1rem;
+            color: #4b5563;
         }
         
-        @media (max-width: 1199px) {
-            .photo-bio-container {
-                min-height: 400px;
-            }
-            .bio-popup {
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 90%;
-                max-width: 500px;
-                height: auto;
-                max-height: 80vh;
-                z-index: 2000;
-            }
-            .photo-placeholder {
-                max-width: 400px;
-                height: 400px;
-            }
-            /* Esconder brasões em telas menores */
-            .badge-container {
-                display: none;
-            }
+        /* FAQ */
+        .faq-item {
+            background: white;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            border: 1px solid #e9eef2;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+        .faq-question {
+            padding: 20px 25px;
+            background: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--dark-military);
+        }
+        .faq-question i {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+            color: var(--military-green);
+        }
+        .faq-answer {
+            padding: 0 25px 20px 25px;
+            color: #4b5563;
+            font-size: 1.1rem;
+            display: none;
+            line-height: 1.6;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
         }
         
-        @media (max-width: 992px) {
-            .hero { padding: 70px 0; }
-            .hero-title { font-size: 2.8rem; }
-            .hero-subtitle { font-size: 1.5rem; }
-            .photo-placeholder { 
-                height: 350px;
-                max-width: 350px;
-            }
-            .service-popup {
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 90%;
-                max-width: 400px;
-                z-index: 2000;
-            }
+        /* Seções */
+        .section-title {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--dark-military);
+            margin-bottom: 1.5rem;
+            text-align: center;
         }
-        
-        @media (max-width: 768px) {
-            .hero { padding: 50px 0; }
-            .hero-title { font-size: 2.2rem; }
-            .hero-subtitle { font-size: 1.2rem; }
-            .whatsapp-button { padding: 15px 35px; font-size: 1.2rem; }
-            .photo-placeholder { 
-                height: 270px;
-                max-width: 300px;
-            }
-            .whatsapp-float { width: 70px; height: 70px; font-size: 35px; }
-            .header-agendar-btn { padding: 10px 25px; font-size: 0.95rem; }
-            .bio-popup {
-                width: 95%;
-                max-height: 70vh;
-            }
+        .section-subtitle {
+            text-align: center;
+            color: #2C3E50;
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        
-        @media (max-width: 480px) {
-            .photo-placeholder { 
-                height: 230px;
-                max-width: 280px;
-            }
+        .light-section {
+            background-color: #F8F9FA;
+            padding: 70px 0;
         }
-        
-        /* Seção Especialização Militar */
+        .white-section {
+            background: white;
+            padding: 70px 0;
+        }
         .military-section {
             background: linear-gradient(135deg, #2C3E50 0%, #3D5229 100%);
             padding: 80px 0;
             color: white;
         }
         
-        .military-text {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: #E8EDDF;
+        /* Call to action final */
+        .cta-text {
+            font-size: 1.3rem;
+            color: #2C3E50;
+            margin-bottom: 2rem;
         }
         
-        .military-text p {
-            margin-bottom: 20px;
+        /* Rodapé */
+        footer {
+            background: linear-gradient(135deg, var(--dark-military), #2C3E50);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        .footer-copyright {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-title { font-size: 3rem; }
+            .urgent-badge { font-size: 1.2rem; }
+            .btn-agendar, .btn-whatsapp { font-size: 1.2rem; padding: 12px 24px; }
+            .badge-container { display: none; }
+        }
+        
+        @media (max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.3rem; }
+            
+            .btn-dual {
+                flex-direction: column;
+                gap: 12px;
+                width: 100%;
+            }
+            
+            .btn-agendar, .btn-whatsapp {
+                width: 100%;
+                justify-content: center;
+                padding: 14px 20px;
+                font-size: 1.2rem;
+                white-space: normal;
+                text-align: center;
+            }
+            
+            .urgent-badge {
+                font-size: 1.1rem;
+                padding: 10px 20px;
+                white-space: normal;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .trust-badge {
+                white-space: normal;
+                text-align: center;
+                flex: 1;
+                justify-content: center;
+            }
+            
+            .photo-container { max-width: 100%; }
+            .section-title { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
-    <!-- BRASÕES DAS FORÇAS ARMADAS - AGORA COM SVGs EMBUTIDOS! -->
+    <!-- BRASÕES DAS FORÇAS ARMADAS (mantidos) -->
     <div class="badge-container badge-left position-20" id="exercito-badge"></div>
     <div class="badge-container badge-right position-20" id="aeronautica-badge"></div>
     <div class="badge-container badge-left position-35" id="marinha-badge"></div>
@@ -577,483 +749,348 @@
     <div class="badge-container badge-left position-50" id="bombeiros-badge"></div>
     <div class="badge-container badge-right position-50" id="prf-badge"></div>
 
-    <!-- WhatsApp Flutuante GRANDE -->
+    <!-- WhatsApp Flutuante -->
     <a href="https://wa.me/554491339060?text=Olá,%20Dr.%20Marcelo,%20sou%20(militar/ex-militar)%20e%20gostaria%20de%20agendar%20uma%20consulta%20especializada" 
        class="whatsapp-float" target="_blank" title="Agende pelo WhatsApp - Especial para Militares">
        <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Cabeçalho FIXO -->
+    <!-- Cabeçalho -->
     <header>
         <div class="container py-3">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
-                    <h1 class="h4 mb-1 fw-900" style="font-size: 1.4rem; color: white;">
-                        Dr. Marcelo Medeiros
-                        <span class="military-badge">EX-MILITAR</span>
-                    </h1>
-                    <div class="d-flex flex-wrap align-items-center gap-2">
-                        <p class="small mb-0 fw-600" style="color: #E8EDDF;">Psiquiatria Especializada para Militares | CRM 47960</p>
-                        <span style="color: #8F9779;">•</span>
-                        <p class="small mb-0 fw-500" style="color: #E8EDDF;">
-                            Pós-graduação em Psiquiatria pelo Hospital Albert Einstein
-                        </p>
-                    </div>
-                    <p class="small mt-1 mb-0 fw-700" style="color: gold;">
+                    <h1 class="header-title">Dr. Marcelo Medeiros</h1>
+                    <p class="header-sub mb-1">CRM 47960 | Psiquiatria</p>
+                    <span class="header-einstein">
+                        <i class="fas fa-graduation-cap me-1"></i> Pós-graduação em Psiquiatria pelo Hospital Albert Einstein
+                    </span>
+                    <p class="small mt-2 mb-0 fw-700" style="color: gold;">
                         <i class="fas fa-star me-1"></i> EX-MILITAR DAS FORÇAS ARMADAS COM EXPERIÊNCIA NA ÁREA
                     </p>
                 </div>
                 <a href="https://wa.me/554491339060?text=Olá,%20Dr.%20Marcelo,%20sou%20(militar/ex-militar)%20e%20gostaria%20de%20agendar%20uma%20consulta%20especializada" 
-                   class="header-agendar-btn" target="_blank">
+                   class="btn-agendar" style="padding: 12px 25px; font-size: 1.1rem;" target="_blank">
                     <i class="fab fa-whatsapp me-2"></i> ATENDIMENTO MILITAR
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Seção Principal -->
+    <!-- HERO SECTION -->
     <section class="hero">
         <div class="container">
-            <h1 class="hero-title">SAÚDE MENTAL ESPECIALIZADA PARA QUEM SERVIU</h1>
-            <p class="hero-subtitle">Atendimento psiquiátrico por quem ENTENDE a vida militar - Ética, sigilo total e expertise em PTSD, estresse pós-deploy e adaptação à vida civil</p>
-            
-            <div class="row align-items-center mt-5">
-                <div class="col-lg-6">
-                    <!-- Container da foto com bio -->
-                    <div class="photo-bio-container">
-                        <!-- SUA FOTO EM ALTA QUALIDADE -->
-                        <div class="photo-placeholder">
-                            <img src="https://i.ibb.co/CsTtFZ52/FOTO-AAAAA.png" 
-                                 alt="Dr. Marcelo Medeiros - Psiquiatra Especializado em Militares CRM 47960"
-                                 class="doctor-photo"
-                                 onerror="this.onerror=null; this.src='https://i.ibb.co/CsTtFZ52/FOTO-AAAAA.png';">
-                        </div>
-                        
-                        <!-- Popup da Biografia ATUALIZADA -->
-                        <div class="bio-popup">
-                            <h4>Dr. Marcelo Medeiros - Trajetória Militar e Formação</h4>
-                            
-                            <p><strong>EX-MILITAR:</strong> Sargento de Carreira do Exército Brasileiro com 7 anos de experiência na caserna. Vivência direta com a cultura, hierarquia e desafios específicos da vida militar.</p>
-                            
-                            <p><strong>Graduação Médica:</strong> Universidade UNINGÁ (2016-2021). Formação generalista com ênfase em psiquiatria e neurologia.</p>
-                            
-                            <p><strong>Pós-graduação:</strong> Especialização em Psiquiatria pelo Hospital Israelita Albert Einstein (SP). Treinamento em psiquiatria biológica e psicofarmacologia avançada.</p>
-                            
-                            <p><strong>Urgência e Emergência:</strong> Experiência em serviços de emergência psiquiátrica, atendendo crises agudas, tentativas de suicídio e quadros psicóticos agudos.</p>
-                            
-                            <p><strong>CAPS:</strong> Atuação em Centro de Atenção Psicossocial desde 2023, atendendo transtornos mentais graves (esquizofrenia, bipolaridade, depressão resistente).</p>
-                            
-                            <p><strong>Especialização Militar:</strong> Abordagem específica para PTSD militar, estresse pós-deploy, adaptação à vida civil, ansiedade em ambiente de alta pressão e transtornos decorrentes de experiências traumáticas no serviço.</p>
-                            
-                            <p><strong>Psicofarmacologia:</strong> Prescrição baseada em evidências com ISRS, IRSN, antipsicóticos atípicos, estabilizadores de humor e psicotrópicos de última geração.</p>
-                            
-                            <div class="mt-3">
-                                <span class="bio-badge">EX-MILITAR</span>
-                                <span class="bio-badge">Psiquiatria Militar</span>
-                                <span class="bio-badge">PTSD e Trauma</span>
-                                <span class="bio-badge">Emergência Psiquiátrica</span>
-                                <span class="bio-badge">Adaptação Civil</span>
-                                <span class="bio-badge">Psicofarmacologia</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-6">
-                    <h2 class="h2 fw-900 mb-4" style="color: var(--dark-military);">CONSULTA ESPECIALIZADA PARA MILITARES</h2>
-                    <div class="price-tag">a partir de R$ 99,90</div>
-                    <p class="price-note">*Valor especial para militares e ex-militares - 30 minutos</p>
-                    <p class="mb-4 fs-5" style="color: #2C3E50;">
-                        <i class="fas fa-shield-alt me-2" style="color: var(--military-green);"></i> Sigilo absoluto - Entendo a hierarquia<br>
-                        <i class="fas fa-user-secret me-2" style="color: var(--military-green);"></i> Discreto - Sem constrangimentos<br>
-                        <i class="fas fa-brain me-2" style="color: var(--military-green);"></i> Foco em PTSD e estresse operacional<br>
-                        <i class="fas fa-home me-2" style="color: var(--military-green);"></i> Adaptação à vida civil<br>
-                        <i class="fas fa-file-medical me-2" style="color: var(--military-green);"></i> Receituário digital seguro
-                    </p>
-                    
-                    <a href="https://wa.me/554491339060?text=Olá,%20Dr.%20Marcelo,%20sou%20(militar/ex-militar)%20e%20gostaria%20de%20agendar%20uma%20consulta%20especializada%20de%2030%20minutos" 
-                       class="whatsapp-button" target="_blank">
-                        <i class="fab fa-whatsapp me-2"></i> AGENDAR CONSULTA ESPECIALIZADA
-                    </a>
-                    
-                    <br>
-                    
-                    <a href="https://marcelomluisc.github.io/minha-receita-psiquiatrica.apk/" 
-                       class="app-button" target="_blank">
-                        <i class="fas fa-mobile-alt me-2"></i> ACESSAR APP DE ANAMNESE MILITAR
-                    </a>
-                    
-                    <!-- Instruções para instalar o app -->
-                    <div class="install-instructions mt-4">
-                        <p class="mb-2"><strong><i class="fas fa-info-circle me-2" style="color: var(--military-green);"></i>APP ESPECIAL PARA MILITARES:</strong></p>
-                        <div class="install-steps">
-                            <div class="step-item">
-                                <div class="step-number">1</div>
-                                <div>Clique em "ACESSAR APP DE ANAMNESE MILITAR"</div>
-                            </div>
-                            <div class="step-item">
-                                <div class="step-number">2</div>
-                                <div>Formulário adaptado para histórico militar</div>
-                            </div>
-                            <div class="step-item">
-                                <div class="step-number">3</div>
-                                <div>Adicione à tela inicial como um app normal</div>
-                            </div>
-                            <div class="step-item">
-                                <div class="step-number">4</div>
-                                <div>Dados enviados com segurança para avaliação</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Serviços Especializados PARA MILITARES -->
-    <section class="py-5" style="position: relative; z-index: 10; background-color: #F8F9FA;">
-        <div class="container">
-            <h2 class="text-center display-5 fw-900 mb-5" style="color: var(--dark-military);">
-                ESPECIALIDADES PARA MILITARES E EX-MILITARES
-            </h2>
-            <div class="row g-4" style="position: relative;">
-                <!-- PTSD Militar -->
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <i class="fas fa-trauma fa-3x" style="color: var(--military-green); margin-bottom: 15px;"></i>
-                        <h3 class="h4 fw-800" style="color: var(--dark-military);">PTSD MILITAR</h3>
-                        <p class="text-muted">Transtorno de Estresse Pós-Traumático relacionado ao serviço</p>
-                        
-                        <div class="service-popup">
-                            <h5>Transtorno de Estresse Pós-Traumático Militar</h5>
-                            <ul>
-                                <li><strong>PTSD Combat:</strong> Decorrente de experiências em operações</li>
-                                <li><strong>Revivências:</strong> Flashbacks, pesadelos recorrentes</li>
-                                <li><strong>Evitação:</strong> Evitar lembranças, pessoas, lugares</li>
-                                <li><strong>Hipervigilância:</strong> Estado de alerta constante</li>
-                                <li><strong>Alterações cognitivas:</strong> Memória, concentração</li>
-                            </ul>
-                            <div class="treatment-info">
-                                <strong>Tratamento Especializado:</strong> Terapia de Exposição Prolongada + EMDR + Medicação
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Estresse Pós-Deploy -->
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <i class="fas fa-plane-departure fa-3x" style="color: var(--military-green); margin-bottom: 15px;"></i>
-                        <h3 class="h4 fw-800" style="color: var(--dark-military);">ESTRESSE PÓS-DEPLOY</h3>
-                        <p class="text-muted">Adaptação após missões, reencontro familiar, retorno à rotina</p>
-                        
-                        <div class="service-popup">
-                            <h5>Adaptação Pós-Missão</h5>
-                            <ul>
-                                <li><strong>Reintegração Familiar:</strong> Dificuldades no retorno ao lar</li>
-                                <li><strong>Alienação:</strong> Sentimento de não-pertencimento</li>
-                                <li><strong>Irritabilidade:</strong> Com familiares e colegas</li>
-                                <li><strong>Insônia:</strong> Distúrbios do sono persistentes</li>
-                                <li><strong>Isolamento:</strong> Dificuldade em compartilhar experiências</li>
-                            </ul>
-                            <div class="treatment-info">
-                                <strong>Abordagem:</strong> Terapia Familiar + Técnicas de Reintegração + Acompanhamento
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Adaptação à Vida Civil -->
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <i class="fas fa-user-tie fa-3x" style="color: var(--military-green); margin-bottom: 15px;"></i>
-                        <h3 class="h4 fw-800" style="color: var(--dark-military);">ADAPTAÇÃO À VIDA CIVIL</h3>
-                        <p class="text-muted">Transição carreira militar-civil, recolocação profissional, nova identidade</p>
-                        
-                        <div class="service-popup">
-                            <h5>Transição Militar-Civil</h5>
-                            <ul>
-                                <li><strong>Identidade:</strong> Reconstrução da autoimagem</li>
-                                <li><strong>Carreira:</strong> Recolocação no mercado civil</li>
-                                <li><strong>Hierarquia:</strong> Adaptação a estruturas menos rígidas</li>
-                                <li><strong>Objetivos:</strong> Redefinição de metas de vida</li>
-                                <li><strong>Rede Social:</strong> Construção de novos relacionamentos</li>
-                            </ul>
-                            <div class="treatment-info">
-                                <strong>Suporte:</strong> Orientação Profissional + Terapia de Aceitação + Coaching
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Ansiedade em Alta Pressão -->
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <i class="fas fa-tachometer-alt fa-3x" style="color: var(--military-green); margin-bottom: 15px;"></i>
-                        <h3 class="h4 fw-800" style="color: var(--dark-military);">ANSIEDADE OPERACIONAL</h3>
-                        <p class="text-muted">Estresse em ambiente de alta pressão, desempenho sob tensão</p>
-                        
-                        <div class="service-popup">
-                            <h5>Ansiedade em Contexto Militar</h5>
-                            <ul>
-                                <li><strong>Performance:</strong> Medo de falhar em missões</li>
-                                <li><strong>Hierarquia:</strong> Pressão por resultados</li>
-                                <li><strong>Tomada de Decisão:</strong> Sob estresse extremo</li>
-                                <li><strong>Inspeções/Avaliações:</strong> Ansiedade antecipatória</li>
-                                <li><strong>Consequências:</strong> Medo de punições/dispensa</li>
-                            </ul>
-                            <div class="treatment-info">
-                                <strong>Tratamento:</strong> Terapia Cognitivo-Comportamental + Técnicas de Mindfulness
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Depressão em Militares -->
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <i class="fas fa-cloud-sun fa-3x" style="color: var(--military-green); margin-bottom: 15px;"></i>
-                        <h3 class="h4 fw-800" style="color: var(--dark-military);">DEPRESSÃO MILITAR</h3>
-                        <p class="text-muted">Transtornos depressivos no contexto das Forças Armadas</p>
-                        
-                        <div class="service-popup">
-                            <h5>Depressão no Ambiente Militar</h5>
-                            <ul>
-                                <li><strong>Depressão Maior:</strong> No contexto de afastamento familiar</li>
-                                <li><strong>Distimia Militar:</strong> Depressão crônica leve</li>
-                                <li><strong>Burnout:</strong> Esgotamento profissional militar</li>
-                                <li><strong>Comorbidades:</strong> Com PTSD, ansiedade</li>
-                                <li><strong>Estigma:</strong> Dificuldade em buscar ajuda</li>
-                            </ul>
-                            <div class="treatment-info">
-                                <strong>Abordagem:</strong> Antidepressivos (ISRS, IRSN) + Psicoterapia Militar
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Transtorno de Ajustamento -->
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <i class="fas fa-exchange-alt fa-3x" style="color: var(--military-green); margin-bottom: 15px;"></i>
-                        <h3 class="h4 fw-800" style="color: var(--dark-military);">TRANSTORNO DE AJUSTAMENTO</h3>
-                        <p class="text-muted">Dificuldades de adaptação a mudanças militares (transferências, promoções)</p>
-                        
-                        <div class="service-popup">
-                            <h5>Ajustamento a Mudanças Militares</h5>
-                            <ul>
-                                <li><strong>Transferências:</strong> Mudança de cidade/estado</li>
-                                <li><strong>Promoções:</strong> Nova responsabilidade/hierarquia</li>
-                                <li><strong>Reformas:</strong> Saída precoce/não planejada</li>
-                                <li><strong>Missões:</strong> Preparação para deslocamentos</li>
-                                <li><strong>Família:</strong> Impacto nas relações familiares</li>
-                            </ul>
-                            <div class="treatment-info">
-                                <strong>Suporte:</strong> Terapia de Suporte + Orientação + Técnicas de Adaptação
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Seção do App Militar -->
-            <div class="row mt-5">
-                <div class="col-lg-10 mx-auto text-center">
-                    <div class="bg-light p-5 rounded-4 border" style="border-color: var(--military-green) !important;">
-                        <i class="fas fa-user-shield fa-4x" style="color: var(--military-green); margin-bottom: 20px;"></i>
-                        <h3 class="h2 fw-900 mb-3" style="color: var(--dark-military);">APLICATIVO DE ANAMNESE MILITAR</h3>
-                        <p class="fs-5" style="color: #2C3E50; margin-bottom: 20px;">
-                            Formulário especializado para histórico militar - <strong>100% sigiloso e seguro</strong><br>
-                            Perguntas adaptadas ao contexto das Forças Armadas.
-                        </p>
-                        <a href="https://marcelomluisc.github.io/minha-receita-psiquiatrica.apk/" 
-                           class="app-button" target="_blank" style="padding: 16px 45px; font-size: 1.2rem;">
-                            <i class="fas fa-external-link-alt me-2"></i> ABRIR APP MILITAR
-                        </a>
-                        <div class="mt-4 text-start">
-                            <p class="text-muted mb-1"><i class="fas fa-check-circle me-2" style="color: var(--military-green);"></i>Formulário adaptado para histórico de serviço</p>
-                            <p class="text-muted mb-1"><i class="fas fa-check-circle me-2" style="color: var(--military-green);"></i>Sigilo absoluto - entendemos a hierarquia</p>
-                            <p class="text-muted mb-1"><i class="fas fa-check-circle me-2" style="color: var(--military-green);"></i>Dados enviados com criptografia militar</p>
-                            <p class="text-muted"><i class="fas fa-check-circle me-2" style="color: var(--military-green);"></i>Funciona offline após primeiro acesso</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção da Especialização MILITAR -->
-    <section class="military-section">
-        <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <h2 class="display-6 fw-900 mb-4" style="color: white;">ESPECIALIZAÇÃO EM SAÚDE MENTAL MILITAR</h2>
-                    <p class="fs-5 military-text mb-4">
-                        <strong>Médico psiquiatra com CRM 47960</strong>, especializado em saúde mental para militares e ex-militares. 
-                        <strong>Ex-militar das Forças Armadas</strong> com 7 anos de experiência na caserna - ENTENDO sua realidade.
-                    </p>
-                    <p class="military-text mb-4">
-                        Atua no diagnóstico e tratamento de transtornos mentais <strong>específicos do contexto militar</strong> com ética, 
-                        respeito à hierarquia e compromisso com o bem-estar integral de quem serviu ou serve ao país.
-                    </p>
-                    <div class="d-flex flex-wrap gap-3">
-                        <span class="credential-badge">EX-MILITAR SARGENTO</span>
-                        <span class="credential-badge">CRM 47960</span>
-                        <span class="military-specialization">ESPECIALISTA EM SAÚDE MENTAL MILITAR</span>
-                        <span class="credential-badge">Ética Médica CFM</span>
+                <div class="col-lg-6 order-lg-2 mb-5 mb-lg-0">
+                    <div class="photo-container">
+                        <img src="https://i.ibb.co/CsTtFZ52/FOTO-AAAAA.png" alt="Dr. Marcelo Medeiros" class="doctor-photo">
                     </div>
                 </div>
-                <div class="col-lg-4 mt-5 mt-lg-0 text-center">
-                    <div class="bg-white p-4 rounded-3 shadow" style="border: 3px solid var(--military-green);">
-                        <i class="fas fa-medal fa-4x" style="color: var(--military-green); margin-bottom: 15px;"></i>
-                        <h3 class="h4 fw-800 mb-3" style="color: var(--dark-military);">COMPREENSÃO ÚNICA</h3>
-                        <p class="text-muted mb-0">
-                            Atendimento por quem VIVEU a realidade militar - Não apenas teoria
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- História da Especialização Militar -->
-    <section class="history-section" style="background: linear-gradient(135deg, #F0F4E8 0%, #E8EDDF 100%);">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <h2 class="display-6 fw-900 mb-4 text-center" style="color: var(--dark-military);">SAÚDE MENTAL NAS FORÇAS ARMADAS: UMA NECESSIDADE ESPECIAL</h2>
+                <div class="col-lg-6 order-lg-1">
+                    <h1 class="hero-title">SAÚDE MENTAL ESPECIALIZADA PARA QUEM SERVIU</h1>
                     
-                    <div class="history-text" style="color: #2C3E50;">
-                        <p>A saúde mental no contexto militar apresenta desafios únicos que exigem abordagem especializada. A natureza do serviço militar - com exposição a situações de alto risco, afastamento familiar, ambiente hierárquico rígido e possibilidade de experiências traumáticas - cria um perfil específico de vulnerabilidade psicológica.</p>
-                        
-                        <p>Estudos internacionais demonstram que militares têm maior prevalência de:</p>
-                        
-                        <ul>
-                            <li><strong>Transtorno de Estresse Pós-Traumático (PTSD):</strong> Até 30% em veteranos de combate</li>
-                            <li><strong>Depressão Major:</strong> 2-3 vezes mais comum que na população civil</li>
-                            <li><strong>Ideiação Suicida:</strong> Taxas preocupantes em várias forças armadas</li>
-                            <li><strong>Transtornos por Uso de Substâncias:</strong> Como estratégia de coping</li>
-                            <li><strong>Transtornos de Ajustamento:</strong> Especialmente durante transições</li>
-                        </ul>
-                        
-                        <p>No Brasil, a realidade não é diferente. Militares enfrentam desafios específicos como:</p>
-                        
-                        <ul>
-                            <li><strong>Estigma:</strong> Cultura de "força" que desencoraja busca por ajuda</li>
-                            <li><strong>Hierarquia:</strong> Receio de impacto na carreira</li>
-                            <li><strong>Transferências:</strong> Desestabilização familiar frequente</li>
-                            <li><strong>Missões:</strong> Exposição a situações de risco</li>
-                            <li><strong>Transição Civil:</strong> Dificuldade de adaptação pós-carreira</li>
-                        </ul>
-                        
-                        <p>A telepsiquiatria especializada para militares oferece uma solução única:</p>
-                        
-                        <ul>
-                            <li><strong>Sigilo Absoluto:</strong> Fora da estrutura hierárquica</li>
-                            <li><strong>Compreensão:</strong> Por profissionais que entendem o contexto</li>
-                            <li><strong>Acessibilidade:</strong> Independente de localização</li>
-                            <li><strong>Especialização:</strong> Tratamento específico para questões militares</li>
-                            <li><strong>Continuidade:</strong> Mesmo durante transferências</li>
-                        </ul>
-                        
-                        <p>Como ex-militar e psiquiatra, integro a compreensão da cultura militar com as melhores evidências científicas em saúde mental, oferecendo tratamento especializado, ético e efetivo para quem serviu ou serve ao país.</p>
+                    <div class="urgent-badge">
+                        ⚡ Atendimento imediato → consulta em até 24h úteis ⚡
+                    </div>
+                    
+                    <p class="hero-subtitle">
+                        Atendimento psiquiátrico por quem ENTENDE a vida militar - Ética, sigilo total e expertise em PTSD, estresse pós-deploy e adaptação à vida civil
+                    </p>
+                    
+                    <!-- Botões duplos -->
+                    <div class="btn-dual">
+                        <a href="https://wa.me/554491339060?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20especializada%20para%20militares" class="btn-agendar" target="_blank">
+                            <i class="fas fa-calendar-check"></i> Agendar consulta
+                        </a>
+                        <a href="https://wa.me/554491339060?text=Olá,%20Dr.%20Marcelo,%20sou%20militar%20e%20tenho%20dúvidas" class="btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Falar com Dr. Marcelo
+                        </a>
+                    </div>
+                    
+                    <!-- Mini badges -->
+                    <div class="d-flex flex-wrap gap-3 mt-4">
+                        <span class="trust-badge"><i class="fas fa-shield-alt"></i> Sigilo total</span>
+                        <span class="trust-badge"><i class="fas fa-user-secret"></i> Discrição militar</span>
+                        <span class="trust-badge"><i class="fas fa-brain"></i> Especializado</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Botão Final de WhatsApp e App MILITAR -->
-    <section class="py-5" style="background-color: #F8F9FA;">
-        <div class="container text-center">
-            <h2 class="display-6 fw-900 mb-4" style="color: var(--dark-military);">INICIE SEU TRATAMENTO ESPECIALIZADO HOJE</h2>
-            <p class="fs-5 mb-4" style="color: #2C3E50;">Atendimento por quem ENTENDE - Sigilo absoluto - Abordagem militar-específica</p>
+    <!-- PARA QUEM É INDICADO -->
+    <section class="light-section">
+        <div class="container">
+            <h2 class="section-title">Para militares e ex-militares</h2>
+            <p class="section-subtitle">Atendimento especializado para questões específicas da vida na caserna</p>
             
+            <div class="indication-grid">
+                <div class="indication-item"><i class="fas fa-trauma"></i><h4>PTSD Militar</h4></div>
+                <div class="indication-item"><i class="fas fa-plane-departure"></i><h4>Estresse pós-deploy</h4></div>
+                <div class="indication-item"><i class="fas fa-user-tie"></i><h4>Adaptação à vida civil</h4></div>
+                <div class="indication-item"><i class="fas fa-tachometer-alt"></i><h4>Ansiedade operacional</h4></div>
+                <div class="indication-item"><i class="fas fa-cloud-sun"></i><h4>Depressão militar</h4></div>
+                <div class="indication-item"><i class="fas fa-exchange-alt"></i><h4>Transtorno de ajustamento</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MINHA AUTORIDADE -->
+    <section class="white-section">
+        <div class="container">
+            <h2 class="section-title">Minha autoridade</h2>
+            <p class="section-subtitle">Por que você pode confiar no meu trabalho</p>
+            
+            <div class="authority-grid">
+                <div class="authority-card">
+                    <i class="fas fa-id-card"></i>
+                    <h5>CRM 47960</h5>
+                    <p>Registro ativo no Conselho Regional de Medicina</p>
+                </div>
+                <div class="authority-card">
+                    <i class="fas fa-medal"></i>
+                    <h5>Ex-Militar</h5>
+                    <p>7 anos de experiência nas Forças Armadas - Entendo sua realidade</p>
+                </div>
+                <div class="authority-card">
+                    <i class="fas fa-gavel"></i>
+                    <h5>Atendimento regulamentado</h5>
+                    <p>Conforme resolução CFM nº 2.314/2022</p>
+                </div>
+                <div class="authority-card">
+                    <i class="fas fa-lock"></i>
+                    <h5>Sigilo absoluto</h5>
+                    <p>100% protegido pela LGPD e Código de Ética</p>
+                </div>
+                <div class="authority-card">
+                    <i class="fas fa-dna"></i>
+                    <h5>Medicina baseada em evidência</h5>
+                    <p>Tratamentos com respaldo científico</p>
+                </div>
+            </div>
+
+            <!-- Cards de valores -->
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-handshake"></i>
+                    <h4>Compromisso</h4>
+                    <p>Estou dedicado a acompanhar cada militar em sua jornada para a saúde mental, oferecendo suporte contínuo e personalizado.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h4>Profissionalismo</h4>
+                    <p>Cada paciente merece um cuidado ético e respeitoso, garantindo que suas necessidades sejam atendidas com a máxima seriedade e competência.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Experiência</h4>
+                    <p>Com anos de prática militar e médica, trago uma vasta experiência para oferecer tratamentos eficazes que promovem o bem-estar duradouro.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS ESPECIALIZADOS -->
+    <section class="light-section">
+        <div class="container">
+            <h2 class="section-title">Especialidades militares</h2>
+            <div class="row g-4">
+                <div class="col-md-4"><div class="service-card"><i class="fas fa-trauma"></i><h4>PTSD Militar</h4><p>Trauma, flashbacks, pesadelos</p></div></div>
+                <div class="col-md-4"><div class="service-card"><i class="fas fa-plane-departure"></i><h4>Pós-deploy</h4><p>Reintegração familiar e social</p></div></div>
+                <div class="col-md-4"><div class="service-card"><i class="fas fa-user-tie"></i><h4>Adaptação civil</h4><p>Transição de carreira</p></div></div>
+                <div class="col-md-4"><div class="service-card"><i class="fas fa-tachometer-alt"></i><h4>Ansiedade</h4><p>Alta pressão, desempenho</p></div></div>
+                <div class="col-md-4"><div class="service-card"><i class="fas fa-cloud-sun"></i><h4>Depressão</h4><p>Afastamento familiar, isolamento</p></div></div>
+                <div class="col-md-4"><div class="service-card"><i class="fas fa-exchange-alt"></i><h4>Ajustamento</h4><p>Transferências, mudanças</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO COMO FUNCIONA -->
+    <section class="white-section">
+        <div class="container">
+            <h2 class="section-title">Como funciona</h2>
+            <p class="section-subtitle">Todo o processo é simples, transparente e pensado para você</p>
+            
+            <div class="how-it-works-grid">
+                <div class="how-card">
+                    <div class="how-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <h4>Agendamento</h4>
+                    <p>Ao entrar em contato pelo WhatsApp, serão oferecidas as datas e horários disponíveis, sempre tentando se adequar às necessidades dos militares.</p>
+                </div>
+                <div class="how-card">
+                    <div class="how-icon"><i class="fas fa-credit-card"></i></div>
+                    <h4>Pagamento</h4>
+                    <p>Serão oferecidas as formas de pagamento como PIX ou parcelamento pelo cartão de crédito em até 10x. Não aceitamos planos de saúde.</p>
+                </div>
+                <div class="how-card">
+                    <div class="how-icon"><i class="fas fa-video"></i></div>
+                    <h4>Consulta</h4>
+                    <p>Será disponibilizado o link do Google Meet pelo WhatsApp no horário marcado. O paciente pode optar por fazer a consulta pelo WhatsApp Vídeo.</p>
+                </div>
+                <div class="how-card">
+                    <div class="how-icon"><i class="fas fa-file-medical"></i></div>
+                    <h4>Pós-consulta</h4>
+                    <p>Após a consulta, apresentarei todas as orientações necessárias, incluindo explicações sobre registros e recomendações importantes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="light-section">
+        <div class="container">
+            <h2 class="section-title">Perguntas frequentes</h2>
             <div class="row justify-content-center">
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100 border-0 shadow" style="border: 2px solid var(--military-green) !important;">
-                        <div class="card-body p-4">
-                            <i class="fab fa-whatsapp fa-3x" style="color: var(--military-green); margin-bottom: 15px;"></i>
-                            <h3 class="h4 fw-800 mb-3" style="color: var(--dark-military);">AGENDE PELO WHATSAPP</h3>
-                            <p class="text-muted mb-4">Consulta especializada para militares - 30 minutos por videochamada</p>
-                            <div class="price-tag" style="font-size: 2.5rem; color: var(--dark-military);">a partir de R$ 99,90</div>
-                            <p class="small text-muted mb-4">*Valor especial para militares e ex-militares</p>
-                            <a href="https://wa.me/554491339060?text=Olá,%20Dr.%20Marcelo,%20sou%20(militar/ex-militar)%20e%20gostaria%20de%20agendar%20uma%20consulta%20especializada%20de%2030%20minutos" 
-                               class="whatsapp-button mt-3" target="_blank" style="padding: 15px 40px;">
-                                <i class="fab fa-whatsapp me-2"></i> AGENDAR CONSULTA MILITAR
-                            </a>
+                <div class="col-lg-8">
+                    <div class="faq-item active">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            A consulta é realmente sigilosa? <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Sim. O atendimento é 100% sigiloso, fora da estrutura hierárquica militar. Nada é compartilhado com seus superiores ou com as Forças Armadas.
                         </div>
                     </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Pode atender militar da ativa? <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Sim, atendo militares da ativa, reserva e ex-militares. O atendimento é particular e sigiloso.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            A receita é válida em farmácias? <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Sim. A receita digital tem validade legal em todo território nacional, conforme portaria 344/98 e resoluções do CFM.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Como agendar? <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Basta clicar em "Agendar consulta" ou "Falar com Dr. Marcelo". Vou responder pessoalmente para acertar o melhor horário.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE DEPOIMENTOS COM FOTOS -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="testimonials-header">
+                <h2>O que militares dizem?</h2>
+                <p>Cuidar da mente foi um divisor de águas para muitos. Pode ser o seu próximo passo também.</p>
+            </div>
+            
+            <!-- Grid de 4 cards -->
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Militar 1">
+                    </div>
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-text">"O Dr. Marcelo entende a realidade militar. Me senti acolhido sem julgamentos. Excelente profissional!"</div>
+                    <div class="testimonial-author">Sgt. Carlos A.</div>
+                    <div class="testimonial-date">8 meses atrás</div>
                 </div>
                 
-                <div class="col-md-6">
-                    <div class="card h-100 border-0 shadow" style="border: 2px solid var(--military-green) !important;">
-                        <div class="card-body p-4">
-                            <i class="fas fa-user-shield fa-3x" style="color: var(--military-green); margin-bottom: 15px;"></i>
-                            <h3 class="h4 fw-800 mb-3" style="color: var(--dark-military);">APP DE ANAMNESE MILITAR</h3>
-                            <p class="text-muted mb-4">Formulário especializado para histórico de serviço</p>
-                            <div class="mb-4">
-                                <p class="text-muted mb-2"><i class="fas fa-shield-alt me-2" style="color: var(--military-green);"></i>100% sigiloso e seguro</p>
-                                <p class="text-muted mb-2"><i class="fas fa-user-secret me-2" style="color: var(--military-green);"></i>Fora da estrutura hierárquica</p>
-                                <p class="text-muted"><i class="fas fa-lock me-2" style="color: var(--military-green);"></i>Criptografia de dados</p>
-                            </div>
-                            <a href="https://marcelomluisc.github.io/minha-receita-psiquiatrica.apk/" 
-                               class="app-button mt-2" target="_blank" style="padding: 15px 40px;">
-                                <i class="fas fa-external-link-alt me-2"></i> ACESSAR APP MILITAR
-                            </a>
-                        </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Militar 2">
                     </div>
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-text">"Atendimento discreto e profissional. Finalmente alguém que entende o estresse da caserna."</div>
+                    <div class="testimonial-author">Cb. Fernanda M.</div>
+                    <div class="testimonial-date">6 meses atrás</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Militar 3">
+                    </div>
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-text">"PTSD após missão. O tratamento mudou minha vida. Recomendo a todos que serviram."</div>
+                    <div class="testimonial-author">Ten. Ricardo S.</div>
+                    <div class="testimonial-date">10 meses atrás</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Militar 4">
+                    </div>
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-text">"Adaptação à vida civil foi difícil. O Dr. Marcelo me ajudou a encontrar um novo propósito."</div>
+                    <div class="testimonial-author">Maj. Patricia L.</div>
+                    <div class="testimonial-date">5 meses atrás</div>
                 </div>
             </div>
             
-            <div class="mt-5">
-                <p class="text-muted small">
-                    <i class="fas fa-shield-alt me-1" style="color: var(--military-green);"></i> Atendimento especializado para Forças Armadas, Polícia Militar, Bombeiros Militares e Forças de Segurança
-                </p>
+            <div class="google-badge">
+                <i class="fab fa-google"></i>
+                <div>
+                    <span class="rating">Com base em 67 avaliações</span><br>
+                    <span class="stars">⭐⭐⭐⭐⭐</span> <span class="total">4.9</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Rodapé -->
-    <footer class="py-4" style="background: linear-gradient(135deg, var(--dark-military), #2C3E50); color: white;">
+    <!-- TEXTO ANTES DO CTA -->
+    <section class="white-section text-center">
+        <div class="container">
+            <h2 class="section-title" style="font-size: 2rem;">Com um acompanhamento totalmente personalizado, posso te ajudar a cuidar da sua saúde mental no contexto militar</h2>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION FINAL -->
+    <section class="light-section text-center">
+        <div class="container">
+            <h2 class="section-title">Dê o primeiro passo hoje</h2>
+            <p class="cta-text">Atendimento especializado para militares - Sigiloso e ético</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="https://wa.me/554491339060?text=Olá,%20quero%20agendar%20minha%20consulta%20especializada%20para%20militares" class="btn-agendar">
+                    <i class="fas fa-calendar-check"></i> Agendar consulta
+                </a>
+                <a href="https://wa.me/554491339060?text=Olá,%20tenho%20dúvidas%20sobre%20o%20atendimento%20militar" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Falar com Dr. Marcelo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="py-4">
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <h3 class="h5 fw-900 mb-2">Dr. Marcelo Medeiros</h3>
-                    <p class="small mb-0" style="color: #E8EDDF;">
-                        <strong>EX-MILITAR</strong> | Psiquiatra Especializado em Militares CRM 47960<br>
-                        Pós-graduado pelo Hospital Albert Einstein<br>
-                        Atendimento especializado conforme Código de Ética Médica e legislação militar
-                    </p>
+                    <p class="mb-0">Dr. Marcelo Medeiros | CRM 47960 | Psiquiatria Especializada em Militares</p>
+                    <p class="text-white-50">Pós-graduado pelo Hospital Albert Einstein • Ex-militar das Forças Armadas • Atendimento online regulamentado</p>
+                    <p class="text-white-50 mt-3"><i class="fas fa-info-circle me-2"></i>Atendimento para militares da ativa, reserva e ex-militares</p>
                 </div>
                 <div class="col-md-4 text-md-end">
-                    <a href="mailto:marcelomedeirossaudeefitness@gmail.com" 
-                       class="d-block mb-1 small" style="color: #E8EDDF; text-decoration: none;">
-                        <i class="fas fa-envelope me-1"></i> E-mail profissional
-                    </a>
-                    <a href="https://wa.me/554491339060" 
-                       class="d-block small" style="color: #E8EDDF; text-decoration: none;">
-                        <i class="fab fa-whatsapp me-1"></i> WhatsApp Militar
-                    </a>
-                    <a href="https://marcelomluisc.github.io/minha-receita-psiquiatrica.apk/" 
-                       class="d-block small mt-2" style="color: #E8EDDF; text-decoration: none;">
-                        <i class="fas fa-user-shield me-1"></i> App de Anamnese Militar
-                    </a>
+                    <a href="#" class="text-white d-block">Política de privacidade</a>
+                    <a href="#" class="text-white">Termos de uso</a>
                 </div>
             </div>
-            <hr class="my-3 opacity-25">
-            <p class="text-center small mb-0" style="color: #E8EDDF;">
-                <i class="fas fa-exclamation-triangle me-1"></i> 
-                Para emergências, procure atendimento médico imediato ou ligue 188 (CVV) | 
-                <i class="fas fa-shield-alt ms-3 me-1"></i> 
-                Site seguro | Protegido por criptografia
-            </p>
+            <div class="footer-copyright">
+                <i class="far fa-copyright me-1"></i> Todos direitos reservados por Dr. Marcelo Medeiros – CRM/PR 47960
+            </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // SVGs EMBUTIDOS DIRETAMENTE - SEM HOSPEDAGEM EXTERNA
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            item.classList.toggle('active');
+        }
+
+        // SVGs EMBUTIDOS DIRETAMENTE (mantido do original)
         document.addEventListener('DOMContentLoaded', function() {
             // Função para criar SVG com base64 embutido
             function createSVGBadge(base64, elementId) {
@@ -1118,13 +1155,10 @@
             document.getElementById('bombeiros-badge').style.backgroundImage = `url("data:image/svg+xml;base64,${btoa(bombeirosSVG)}")`;
             document.getElementById('prf-badge').style.backgroundImage = `url("data:image/svg+xml;base64,${btoa(prfSVG)}")`;
             
-            // Animação suave para os brasões
-            const badges = document.querySelectorAll('.badge-container');
-            
             // Efeito de parallax suave nos brasões
+            const badges = document.querySelectorAll('.badge-container');
             window.addEventListener('scroll', function() {
                 const scrolled = window.pageYOffset;
-                
                 badges.forEach((badge, index) => {
                     const speed = 0.1 + (index * 0.05);
                     const yPos = -(scrolled * speed);
